@@ -9,7 +9,7 @@ Call Baidu Translate api to translate one or more characters
 package main
 
 import (
-	"cy/CloudERP/common/middlewares/translate"
+	"github.com/hwfy/translate"
 	"fmt"
 )
 
