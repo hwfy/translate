@@ -28,30 +28,30 @@ func TestTranslate(t *testing.T) {
 	query := "感谢"
 	querys := []string{"感谢", "全球"}
 
-	result := Eval("zh", "cht", query, "")
+	result := Baidu("zh", "cht", query, "")
 	if result != "感謝" {
 		t.Errorf("The ideal result 感謝, but practical %s", result)
 	}
-	result = Eval("zh", "en", query, "")
+	result = Baidu("zh", "en", query, "")
 	if result != "Thank" {
 		t.Errorf("The ideal result Thank, but practical %s", result)
 	}
-	result = Eval("zh", "jp", query, "")
+	result = Baidu("zh", "jp", query, "")
 	if result != "ありがとうございます" {
 		t.Errorf("The ideal result ありがとうございます, but practical %s", result)
 	}
 
-	results := Evals("zh", "cht", querys, "")
+	results := Baidus("zh", "cht", querys, "")
 	word := strings.Join(results, ",")
 	if word != "感謝,全球" {
 		t.Errorf("The ideal result 感謝,全球, but practical %s", word)
 	}
-	results = Evals("zh", "en", querys, "")
+	results = Baidus("zh", "en", querys, "")
 	word = strings.Join(results, ",")
 	if word != "Thank,Global" {
 		t.Errorf("The ideal result Thank,Global, but practical %s", word)
 	}
-	results = Evals("zh", "jp", querys, "")
+	results = Baidus("zh", "jp", querys, "")
 	word = strings.Join(results, ",")
 	if word != "ありがとうございます,グローバル" {
 		t.Errorf("The ideal result ありがとうございます,グローバル, but practical %s", word)

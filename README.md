@@ -1,5 +1,5 @@
 # translate
-Call Baidu Translate api to translate one or more characters
+Call Translate api to translate one or more characters
 
 # Installation
 >go get github.com/hwfy/translate
@@ -16,24 +16,24 @@ import (
 func main() {
 	query := "¸ÐÐ»"
 
-	result := translate.Eval("zh", "cht", query, "")
+	result := translate.Google("zh", "cht", query, "")
 	fmt.Println(result)
 
-	result = translate.Eval("zh", "en", query, "")
+	result = translate.Google("zh", "en", query, "")
 	fmt.Println(result)
 
-	result = translate.Eval("zh", "jp", query, "")
+	result = translate.Google("zh", "jp", query, "")
 	fmt.Println(result)
 
 	querys := []string{"ÄãºÃ", "È«Çò"}
 
-	results := translate.Evals("zh", "cht", querys, "")
+	results := translate.Googles("zh", "cht", querys, "")
 	fmt.Println(results)
 
-	results = translate.Evals("zh", "en", querys, "")
+	results = translate.Googles("zh", "en", querys, "")
 	fmt.Println(results)
 
-	results = translate.Evals("zh", "jp", querys, "")
+	results = translate.Googles("zh", "jp", querys, "")
 	fmt.Println(results)
 }
 // OutPut:
